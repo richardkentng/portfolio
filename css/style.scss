@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap');
+
+$green: rgb(123, 185, 92);
+$color: #bbb;
+.green {color: $green;}
+%bdr {border: 1px solid black;}
+%bdrr {border: 1px solid red;}
+%bdrl {border: 1px solid lime;}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, div {color: $color;}
+body {background-color: rgb(48, 48, 48);}
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    
+}
+.nav-placeholder {height: 40px;}
+
+
+
+//*************************      NAVBAR
+nav {
+    list-style: none;
+    display: flex;
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.3);
+    z-index: 1;
+
+    .left {
+        display: flex;
+        align-items: center;
+        width: 25%;
+        background-color: $green;
+        .rn-richardng {
+            font-size: 1.4em;
+            color: black;
+            margin-left: 1em;
+            * {
+                font-family: 'Architects Daughter', cursive;
+            }
+            .rn {
+                display: none;
+            }
+        }
+    }
+    .right {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 75%;
+        
+        a {
+            @extend %bdr;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(255, 255, 227);
+            text-decoration: none;
+            color: green;
+        }
+        a:hover {
+            background-color: rgb(255, 245, 187);
+        }
+        a:active {
+            background-color: rgb(255, 233, 108);
+        }
+    }
+}
+
+
+// profile picture
+.pp {
+    margin-top: 3em;
+    min-width: 200px;
+    width: 30%;
+    max-width: 300px;
+    border: 5px ridge $green;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    transition: filter 2s;
+}
+
+.softwareengineer {
+    font-family: 'Zilla Slab Highlight';
+    font-size: 1.1em;
+}
+
+// green lists of skills
+.cont-lists-skills {
+    display: flex;
+    justify-content: center;
+    .border-green-ul {
+        border: 1px solid $green;
+        padding: 13px;
+        border-radius: 5px;
+        list-style: none;
+        display: inline-block;
+        background-color: rgb(44, 51, 41);
+        margin: 0 5px;;
+    }
+}
+
+
+// *****************************    anchor links and their targets
+// offset anchor link location (due to fixed navbar)
+#about {
+    padding-top: 5em;
+}
+#projects, #resume, #contact {
+    position: absolute;
+    top: -50px;
+}
+// margin and color transition for anchor link targets
+.im, .hprojects, .hresume, .hcontact {
+    margin-bottom: 0.6em;
+    transition: color 0.2s;
+}
+
+
+//************************** Project Cards
+.project {
+    display: flex;
+    flex-direction: column;
+    .project-left-right {
+        display: flex;
+        justify-content: space-around;
+        .project-picture-icons {
+            border: 4px solid $green;
+            width: 40%;
+            height: 100%;
+            background-color: rgb(96, 159, 124);
+            .icon-strip {
+                display: flex;
+                justify-content: center;
+                background-color:black;
+            }
+            .project-picture {
+                width: 100%;
+            }
+        }
+        .project-details {
+            width: 50%;
+            margin-bottom: 1em;
+            ul {
+                margin-left: 1em;
+            }
+        }
+    }
+
+    .github-heroku {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+// ******************       contact email and linkedin github icons
+.email-linkedin-github {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .email {
+        margin-right: 10px;
+    }
+}
+
+
+// *********************** icons and links
+.icon {
+    width: 40px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.icon:hover {
+    filter: brightness(1.5)
+}
+
+
+.link-blue {
+    color: dodgerblue;
+}
+.link-blue:hover {
+    color: rgb(129, 225, 255);
+}
+
+
+.link-sneaky {
+    text-decoration: none;
+    color: $color;
+}
+.link-sneaky:hover {
+    color: red;
+}
+
+
+.sun-lover:hover {
+    color: gold;
+}
+
+
+
+
+
+
+.bottom-spacer {
+    height: 10em;
+}
+
+
+
+
+
+
+/*************************   general */
+.tac {text-align: center;}
+.tal {text-align: left;}
+.rel {position: relative;}
+.card {
+    margin: 2em 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px rgba(255,255,255,0.1);
+    background-color: rgb(57, 57, 57);
+    
+}
+.dfc {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+/**************************  font sizes  */
+.fs1 {font-size: 1em;}
+.fs1-5 {font-size: 1.5em;}
+.fs2 {font-size: 2em;}
+.fs2-5 {font-size: 2.5em;}
+.fs3 {font-size: 3em;}
+
+.mb0-5 {margin-bottom: 0.5em;}
+.mb1 {margin-bottom: 1em;}
+.mb1-5 {margin-bottom: 1.5em;}
+
+
+
+
+
+
+
+/*************************************** 
+            MEDIA QUERIES
+***************************************/
+
+// continue margin for main text after margin-auto loses effect
+@media (max-width: 800px) {
+    main {
+        margin: 0 3em;
+    }
+}
+
+// responsive project card
+@media (max-width: 670px) {
+    .project-left-right {
+        flex-direction: column;
+        align-items: center;
+        // background-color: slategray;
+
+        .project-picture-icons {
+            width: 80% !important;
+            margin-bottom: 1em;
+        }
+        .project-details {
+            padding: 0 20px !important;
+            width: 100% !important;
+            transform: translateX(10px);
+        }
+    }
+} 
+
+// changes 'Richard Ng' to 'RN' in navbar
+@media (max-width: 660px) {
+    nav {
+        .left {
+            width: 50px;
+            .rn-richardng {
+                margin: 10px;
+                .richardng {
+                    display: none;
+                }
+                .rn {
+                    display: block;
+                }
+            }
+        }
+        .right {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    // responsive skills list
+    .cont-lists-skills {
+        flex-direction: column;
+    }
+    //responsive email and linkedin/github icons
+    .email-linkedin-github {
+        flex-direction: column;
+        .email {
+            margin: 0 0 10px 0;
+        }
+    }
+}
+
+
+
