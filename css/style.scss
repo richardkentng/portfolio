@@ -3,6 +3,7 @@
 
 $green: rgb(123, 185, 92);
 $color: #bbb;
+
 .green {color: $green;}
 %bdr {border: 1px solid black;}
 %bdrr {border: 1px solid red;}
@@ -126,6 +127,16 @@ nav {
 .im, .hprojects, .hresume, .hcontact {
     margin-bottom: 0.6em;
     transition: color 0.2s;
+}
+
+.img-resume {
+    display: inline-block;
+    background-image: url('../images/resume.png');
+    width: 56px;
+    height: 66px;
+}
+.img-resume:hover { 
+    background-image: url('../images/resume-green.png');
 }
 
 
