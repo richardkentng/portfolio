@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap');
 
-$green: rgb(123, 185, 92);
+$green: rgb(160, 185, 92);
 $color: #bbb;
 
 .green {color: $green;}
@@ -28,57 +28,57 @@ main {
 
 
 //*************************      NAVBAR
-nav {
-    list-style: none;
-    display: flex;
-    height: 40px;
+.navbar {
     position: fixed;
     width: 100%;
-    box-shadow: 0 2px 1px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $green;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
     z-index: 1;
-
-    .left {
-        display: flex;
-        align-items: center;
-        width: 25%;
-        background-color: $green;
-        .rn-richardng {
-            font-size: 1.4em;
+    .brand-name {
+        width: 100%;
+        height: auto;
+        .short, .long {
+            font-size: 1.4rem;
             color: black;
-            margin-left: 1em;
-            * {
-                font-family: 'Architects Daughter', cursive;
-            }
-            .rn {
-                display: none;
-            }
+            margin-left: 1rem;
+            font-family: 'Architects Daughter', cursive;
+        }
+        .short {
+            padding: 0.65rem;
+            display: none;
         }
     }
-    .right {
+    .navbar-links ul {
+        list-style: none;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 75%;
         
-        a {
-            @extend %bdr;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
+        li {
             background-color: rgb(255, 255, 227);
-            text-decoration: none;
-            color: green;
+            a {
+                @extend %bdr;
+                text-decoration: none;
+                color: green;
+                display: block;
+                padding: 1rem;
+            }
         }
-        a:hover {
-            background-color: rgb(255, 245, 187);
-        }
-        a:active {
-            background-color: rgb(255, 233, 108);
-        }
+        li:hover { background-color: rgb(255, 245, 187); }
+    }
+    .toggle-button {
+        color: black;
+        font-size: 2rem;
+        position: absolute;
+        top: 0.2rem;
+        right: 1rem;
+        display: none;
+        cursor: pointer;
     }
 }
+
 
 
 // profile picture
@@ -121,7 +121,7 @@ nav {
 }
 #projects, #resume, #contact {
     position: absolute;
-    top: -50px;
+    top: -5rem;
 }
 // margin and color transition for anchor link targets
 .im, .hprojects, .hresume, .hcontact {
@@ -299,24 +299,28 @@ nav {
     }
 } 
 
-// changes 'Richard Ng' to 'RN' in navbar
+// for mobile responsive navbar
 @media (max-width: 660px) {
-    nav {
-        .left {
-            width: 50px;
-            .rn-richardng {
-                margin: 10px;
-                .richardng {
-                    display: none;
-                }
-                .rn {
-                    display: block;
-                }
+    .navbar {
+        flex-direction: column;
+        .brand-name {
+            .short { 
+                display: inline-block;
             }
+            .long { display: none; }
         }
-        .right {
+        .navbar-links {
+            display: none;
             width: 100%;
         }
+        .navbar-links ul {
+            flex-direction: column;
+            text-align: center;
+        }
+        .toggle-button {
+            display: block;
+        }
+        .navbar-links.active { display: block; }
     }
 }
 
