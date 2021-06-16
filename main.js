@@ -1,4 +1,9 @@
-
+//toggle mobile navbar
+const toggleButton = document.querySelector('.toggle-button')
+const navbarLinks = document.querySelector('.navbar-links')
+toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
 
 //****** clicking 'sun-lover' will light me up'
 const sunLoverEl = document.querySelector('.sun-lover')
@@ -26,13 +31,15 @@ const contactHeader = document.querySelector('.hcontact')
 
 const pairs = [[aboutLink, imStatement], [projectsLink, projectsHeader], [resumeLink, resumeHeader], [contactLink, contactHeader]]
 
-pairs.forEach(pair => {
-    pair[0].addEventListener('click', () => {
-        //reset all target colors to grayish white
-        pairs.forEach(pair => {
-            pair[1].style.color = '#bbb'
-        })
-        //target color to gold
-        pair[1].style.color = 'gold'
+pairs.forEach(([link, header]) => {
+    link.addEventListener('click', () => {
+        //reset header colors to white-ish
+        pairs.forEach(([link, header]) => header.style.color = '#bbb')
+        //set target header color to gold
+        header.style.color = 'gold'
+        //if mobile navbar is being displayed, hide navbar-links
+        if (navbarLinks.classList.contains('active')) {
+            navbarLinks.classList.remove('active')
+        }
     })
 })
