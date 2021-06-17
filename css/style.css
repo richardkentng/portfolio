@@ -315,6 +315,9 @@ main {
     flex-direction: column;
     text-align: center;
   }
+  .navbar .navbar-links li a {
+    width: auto !important;
+  }
   .navbar .toggle-button {
     display: block;
   }
