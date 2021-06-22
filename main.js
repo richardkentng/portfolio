@@ -43,3 +43,14 @@ pairs.forEach(([link, header]) => {
         }
     })
 })
+
+//make scroll-up button appear after user scrolls down
+const scrollUp = document.querySelector('.scroll-up')
+document.addEventListener('scroll', (e) => {
+    //detect whether projectsHeader is nearing top
+    if (projectsHeader.getBoundingClientRect().top <= 100) {
+        scrollUp.classList.add('active')
+    } else {
+        scrollUp.classList.remove('active')
+    }
+})
