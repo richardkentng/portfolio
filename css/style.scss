@@ -250,6 +250,24 @@ main {
     align-items: center;
 }
 
+.scroll-up {
+    opacity: 0.75;
+    position: fixed;
+    bottom: 50%;
+    transform: translateY(100%);
+    right: 12%;
+    display: none;
+    transition: all 0.05s;
+}
+.scroll-up.active {
+    display: inline;
+}
+.scroll-up:hover {
+    opacity: 1;
+    transform: translateY(90%);
+
+}
+
 /**************************  font sizes  */
 .fs1 {font-size: 1em;}
 .fs1-5 {font-size: 1.5em;}
@@ -336,6 +354,9 @@ main {
         .email {
             margin: 0 0 10px 0;
         }
+    }
+    .scroll-up {
+        right: 0.5rem;
     }
 }
 
